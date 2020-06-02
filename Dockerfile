@@ -11,7 +11,6 @@ RUN apk --no-cache --update add privoxy ca-certificates bash tzdata && \
     sed -i'' 's/accept-intercepted-requests\ 0/accept-intercepted-requests\ 1/' /etc/privoxy/config && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
-    apk del tzdata && \
     mkdir /data && \
     tar -czf /data/config.tgz /etc/privoxy && \
     chmod +x /entry.sh
