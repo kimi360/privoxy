@@ -7,7 +7,7 @@ RUN apk --no-cache --update add privoxy ca-certificates bash && \
     sed -i'' 's/enable-edit-actions\ 0/enable-edit-actions\ 1/' /etc/privoxy/config && \
     sed -i'' 's/accept-intercepted-requests\ 0/accept-intercepted-requests\ 1/' /etc/privoxy/config && \ 
 
-VOLUME ["/etc/privoxy"]
+VOLUME ["/etc/privoxy/"]
 
 ENTRYPOINT ["privoxy"]
 CMD ["--no-daemon","--user","privoxy","/etc/privoxy/config"]
