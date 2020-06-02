@@ -5,7 +5,6 @@ RUN apk --no-cache --update add privoxy ca-certificates bash && \
     sed -i'' 's/127\.0\.0\.1:8118/0\.0\.0\.0:1081/' /etc/privoxy/config
 RUN chown privoxy.privoxy /etc/privoxy/*
 
-VOLUME ["/etc/privoxy/"]
 VOLUME ["/etc/privoxy"]
 
 EXPOSE 1081
