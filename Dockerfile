@@ -1,5 +1,7 @@
 FROM alpine
 
+ENV TZ=Asia/Shanghai
+
 EXPOSE 1081
 
 ADD entry.sh /entry.sh
